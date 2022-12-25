@@ -535,9 +535,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 143520011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc5d2fb27695f654fac7e913db4eeedc, type: 3}
+  m_Script: {fileID: 11500000, guid: 934ca2fb0ddbeb0439600fcb8360e8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dependencyStatus: 0
 --- !u!1 &150557249
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -87.30008, y: -40.199844}
+  m_AnchoredPosition: {x: -87.30005, y: -40.19995}
   m_SizeDelta: {x: 90, y: 92}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &229397504
@@ -917,7 +918,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2056093200}
         m_TargetAssemblyTypeName: AuthUI, Assembly-CSharp
-        m_MethodName: OnWriteScreenText
+        m_MethodName: onWriteScreenText
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1371,9 +1372,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 143520013}
+      - m_Target: {fileID: 2056093200}
         m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
-        m_MethodName: RegisterButton
+        m_MethodName: Register
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1461,7 +1462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -314.00006, y: -49.30191}
+  m_AnchoredPosition: {x: -314, y: -49.302002}
   m_SizeDelta: {x: 172.6859, y: 70.5952}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &337370313
@@ -1519,7 +1520,19 @@ MonoBehaviour:
       m_Image: {fileID: 21300000, guid: 870219f200ba94d9ca9a629d6effaeef, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 974325173}
+        m_TargetAssemblyTypeName: LanguageController, Assembly-CSharp
+        m_MethodName: languageChangedDropdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &337370314
 MonoBehaviour:
@@ -1654,7 +1667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &465859926
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2364,7 +2377,7 @@ GameObject:
   - component: {fileID: 728503201}
   - component: {fileID: 728503200}
   m_Layer: 0
-  m_Name: TooltipText
+  m_Name: InfoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2521,9 +2534,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 143520013}
+      - m_Target: {fileID: 2056093200}
         m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
-        m_MethodName: LoginButton
+        m_MethodName: Login
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2756,7 +2769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -191.30005, y: -38.59973}
+  m_AnchoredPosition: {x: -191.30005, y: -38.599854}
   m_SizeDelta: {x: 90, y: 92}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &802350585
@@ -2843,7 +2856,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2056093200}
         m_TargetAssemblyTypeName: AuthUI, Assembly-CSharp
-        m_MethodName: LinkButton
+        m_MethodName: linkButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2869,7 +2882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &840418946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3107,7 +3120,7 @@ MonoBehaviour:
   OrLogin: {fileID: 660223887}
   BecomeaPirateLegend: {fileID: 1685149506}
   Terms: {fileID: 1425315264}
-  Tooltip: {fileID: 728503200}
+  UsernameInfo: {fileID: 728503200}
   GetOnDeck: {fileID: 37513582}
   EmailLogin: {fileID: 278744612}
   PasswordLogin: {fileID: 1828096487}
@@ -3297,11 +3310,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2056093200}
         m_TargetAssemblyTypeName: AuthUI, Assembly-CSharp
-        m_MethodName: showHidePassRegister
-        m_Mode: 1
+        m_MethodName: showHidePass
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1662235565}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.InputField, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3510,8 +3523,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1224499068}
   m_TextComponent: {fileID: 859926737}
   m_Placeholder: {fileID: 1432783314}
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -3700,7 +3713,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2056093200}
         m_TargetAssemblyTypeName: AuthUI, Assembly-CSharp
-        m_MethodName: OnWriteScreenText
+        m_MethodName: onWriteScreenText
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3876,7 +3889,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2056093200}
         m_TargetAssemblyTypeName: AuthUI, Assembly-CSharp
-        m_MethodName: RegisterScreen
+        m_MethodName: registerScreenButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3960,7 +3973,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1322755192
 MonoBehaviour:
@@ -4092,7 +4105,6 @@ GameObject:
   - component: {fileID: 1425315263}
   - component: {fileID: 1425315265}
   - component: {fileID: 1425315264}
-  - component: {fileID: 1425315266}
   m_Layer: 5
   m_Name: Terms
   m_TagString: Untagged
@@ -4164,18 +4176,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425315262}
   m_CullTransparentMesh: 1
---- !u!114 &1425315266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425315262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da8092db65544aea9c18e336ff54ea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1432783312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4352,7 +4352,7 @@ LightingSettings:
   m_AlbedoBoost: 1
   m_IndirectOutputScale: 1
   m_UsingShadowmask: 0
-  m_BakeBackend: 1
+  m_BakeBackend: 2
   m_LightmapMaxSize: 512
   m_BakeResolution: 32
   m_Padding: 2
@@ -4519,7 +4519,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2056093200}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AuthUI, Assembly-CSharp
         m_MethodName: userNameinfoButton
         m_Mode: 1
@@ -4617,7 +4617,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2056093200}
         m_TargetAssemblyTypeName: AuthUI, Assembly-CSharp
-        m_MethodName: LoginScreen
+        m_MethodName: loginScreenButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4919,13 +4919,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1661353723}
   m_TextComponent: {fileID: 677549048}
   m_Placeholder: {fileID: 1235986213}
-  m_ContentType: 0
+  m_ContentType: 6
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 7
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 5
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
@@ -5067,8 +5067,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1662235566}
   m_TextComponent: {fileID: 1205762770}
   m_Placeholder: {fileID: 1126292735}
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -5283,11 +5283,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2056093200}
         m_TargetAssemblyTypeName: AuthUI, Assembly-CSharp
-        m_MethodName: showHidepass
-        m_Mode: 1
+        m_MethodName: showHidePass
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1224499067}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.InputField, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5424,7 +5424,6 @@ GameObject:
   - component: {fileID: 1687258585}
   - component: {fileID: 1687258584}
   - component: {fileID: 1687258582}
-  - component: {fileID: 1687258586}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5498,18 +5497,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20.146, y: 195.09, z: 0.001}
---- !u!114 &1687258586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687258581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1728091930
 GameObject:
   m_ObjectHideFlags: 0
@@ -5711,7 +5698,7 @@ GameObject:
   - component: {fileID: 1823819958}
   - component: {fileID: 1823819960}
   m_Layer: 0
-  m_Name: tooltipBackground
+  m_Name: UserNameInfoBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6048,7 +6035,7 @@ GameObject:
   - component: {fileID: 1860461569}
   - component: {fileID: 1860461568}
   m_Layer: 0
-  m_Name: InfoButton
+  m_Name: userNameInfoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6120,7 +6107,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2056093200}
         m_TargetAssemblyTypeName: AuthUI, Assembly-CSharp
-        m_MethodName: userNameinfoButton
+        m_MethodName: userNameInfoButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6253,13 +6240,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1871824053}
   m_TextComponent: {fileID: 512974101}
   m_Placeholder: {fileID: 1652051273}
-  m_ContentType: 0
+  m_ContentType: 6
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 7
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 5
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
@@ -6713,7 +6700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1981999793}
-  - component: {fileID: 1981999792}
+  - component: {fileID: 1981999794}
   m_Layer: 0
   m_Name: FirebaseManager
   m_TagString: Untagged
@@ -6721,18 +6708,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1981999792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981999791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80d9ec82164818443ad2ea1942be9eba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1981999793
 Transform:
   m_ObjectHideFlags: 0
@@ -6748,6 +6723,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1981999794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981999791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934ca2fb0ddbeb0439600fcb8360e8e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dependencyStatus: 0
 --- !u!1 &2056093197
 GameObject:
   m_ObjectHideFlags: 0
@@ -6759,7 +6747,7 @@ GameObject:
   - component: {fileID: 2056093199}
   - component: {fileID: 2056093200}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: AuthUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6789,6 +6777,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2056093197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bc0221f36d7f684683e546dcaed1440, type: 3}
+  m_Script: {fileID: 11500000, guid: e6db7dd8f4607714fa0b6f2bb34140a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dependencyStatus: 0
+  loginUI: {fileID: 840418945}
+  registerUI: {fileID: 465859925}
+  linkPanel: {fileID: 1376831383}
+  screenText: {fileID: 106600357}
+  emailLoginField: {fileID: 1661353722}
+  passwordLoginField: {fileID: 1224499067}
+  warningLoginText: {fileID: 343072892}
+  confirmLoginText: {fileID: 343072892}
+  usernameRegisterField: {fileID: 757445087}
+  emailRegisterField: {fileID: 1871824052}
+  passwordRegisterField: {fileID: 1662235565}
+  userNameInfoPanel: {fileID: 1823819956}
+  warningRegisterText: {fileID: 343072892}
+  verifyToogle: {fileID: 213810968}

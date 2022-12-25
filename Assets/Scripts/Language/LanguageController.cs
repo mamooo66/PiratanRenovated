@@ -11,7 +11,7 @@ public class LanguageController : MonoBehaviour
 
     [SerializeField] private TextAsset[] languages;
     [SerializeField] private Dropdown languageDropDown;
-    [SerializeField] private int SelectedLanguageIndex;
+    [SerializeField] private int selectedLanguageIndex;
     
     [Header("Auth UI")]
     [SerializeField] private Text Discord;
@@ -27,7 +27,7 @@ public class LanguageController : MonoBehaviour
     [SerializeField] private Text OrLogin;
     [SerializeField] private Text BecomeaPirateLegend;
     [SerializeField] private Text Terms;
-    [SerializeField] private Text Tooltip;
+    [SerializeField] private Text UsernameInfo;
     
 
     [Header("Login UI")]
@@ -48,8 +48,8 @@ public class LanguageController : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("selectedLanguage"))
         {
-            SelectedLanguageIndex = PlayerPrefs.GetInt("selectedLanguage");
-            languageDropDown.value = SelectedLanguageIndex;
+            selectedLanguageIndex = PlayerPrefs.GetInt("selectedLanguage");
+            languageDropDown.value = selectedLanguageIndex;
         }
         
         
@@ -87,7 +87,7 @@ public class LanguageController : MonoBehaviour
         {
             UserName.text = data.UserNameRegister;
             Password.text = data.PasswordRegister;
-            Tooltip.text = data.Tooltip;
+            UsernameInfo.text = data.UsernameInfo;
             Email.text = data.EmailRegister;
             BecomeaPirateLegend.text = data.BecomeaPirateLegendRegister;
             Terms.text = data.TermsRegister;
@@ -106,10 +106,7 @@ public class LanguageController : MonoBehaviour
 
     public void languageChangedDropdown()
     {
-        if (SelectedLanguageIndex == 0)
-            ChangeLanguage(0);
- 
-        if (SelectedLanguageIndex == 1)
-            ChangeLanguage(1);
+        selectedLanguageIndex = languageDropDown.value;
+        ChangeLanguage(selectedLanguageIndex);
     }
 }

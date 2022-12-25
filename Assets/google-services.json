@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "849649035235",
+    "project_id": "piratan-2903e",
+    "storage_bucket": "piratan-2903e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849649035235:android:3545774f9f73f03cc462d6",
+        "android_client_info": {
+          "package_name": "com.mamo.piratan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849649035235-66e2ijjfshpv0o0lguk68p1jfv15lgj1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_RTBMFIJj4M84QG5JXiO9Gbg3-fab-AQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849649035235-66e2ijjfshpv0o0lguk68p1jfv15lgj1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "849649035235-d5ll6f75vjb8efqsm1d8i770q87okoif.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mamo.piratan"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

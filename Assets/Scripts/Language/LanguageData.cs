@@ -21,7 +21,7 @@ public class LanguageData
     public string Dock;
     public string Events;
     public string Market;
-    public string Tooltip;
+    public string UsernameInfo;
     public string Discord;
     public string Support;
     public string ReportBug;
