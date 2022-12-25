@@ -1,0 +1,23 @@
+{
+    "UserNameRegister":"Username",
+	"PasswordRegister":"Password",
+	"EmailRegister":"Email",
+	"CreateNewAccountRegister":"Create New Account",
+	"OrLoginRegister": "OrLogin",
+	"BecomeaPirateLegendRegister":"Become a Pirate Legend!",
+	"TermsRegister": "Terms & Conditions and Data Privacy Policy read and accepted.",
+	"EmailLogin": "Email",
+	"PasswordLogin": "Password",
+	"GetondeckCaptain": "Get on deck, Captain!",
+	"GoToBattle": "Go to Battle!",
+	"Rank": "Rank",
+	"Skills": "Skills",
+	"Dock": "Dock",
+	"Events": "Events",
+	"Market": "Market",
+	"Tooltip": "Username\nYour Username is what is used to log into your account and it is important to keep this private.\nPlease note that this name cannot be changed but you can change your nickname in the game.",
+	"Discord": "Join Discord",
+	"Support": "Get Support",
+	"ReportBug": "Report a bug",
+	"Website": "Go to Website"
+}

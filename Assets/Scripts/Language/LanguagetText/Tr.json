@@ -1,0 +1,23 @@
+{
+	"UserNameRegister":"Kullanıcı Adı",
+	"PasswordRegister":"Şifre",
+	"EmailRegister":"E-Posta",
+	"CreateNewAccountRegister":"Yeni Hesap Oluştur",
+	"OrLoginRegister": "Yada Giriş yap",
+	"BecomeaPirateLegendRegister": "Bir Korsan Efsanesi Ol!",
+	"TermsRegister": "Şartlar ve Koşullar ve Veri Gizliliği Politika okundu ve kabul edildi.",
+	"EmailLogin": "E-Posta",
+	"PasswordLogin": "Şifre",
+	"GetondeckCaptain": "Güverteye Çık Kaptan!",
+	"GoToBattle": "Savaşa Katıl!",
+	"Rank": "Rütbe",
+	"Skills": "Yetenekler",
+	"Dock": "Rıhtım",
+	"Events": "Etkinlikler",
+	"Market": "Market",
+	"Tooltip": "Kullanıcı adı\nKullanıcı adınız, hesabınıza giriş yapmak için kullanılan şeydir ve bunu gizli tutmak önemlidir.\nLütfen bu adın değiştirilemeyeceğini unutmayın, ancak oyun içinde takma adınızı değiştirebilirsiniz.",
+	"Discord": "Discord'a katıl",
+	"Support": "Destek",
+	"ReportBug": "Bug bildir",
+	"Website": "Website"
+}

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9e6c3a813ec73e947a49fdced0d1d2ad
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - CC Dusk Till Dawn
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 32356ed101aead447ba9a4a5f73ee427, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
