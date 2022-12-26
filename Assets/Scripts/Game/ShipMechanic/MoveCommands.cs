@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class MoveCommands : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // !HAREKET MEKANİKLERİ
+    
+    // Rastgele bir noktaya hareket etme(NPC ler için)
+    // Seçilen bir noktaya hareket etme
+    // Hareket ederken rotasyonu değiştirme
+    
+    
+    
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

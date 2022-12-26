@@ -85,6 +85,7 @@ public class LanguageController : MonoBehaviour
         }
         else if (scene.name == "AuthMenu")
         {
+            //Authmenu sahnesi 
             UserName.text = data.UserNameRegister;
             Password.text = data.PasswordRegister;
             UsernameInfo.text = data.UsernameInfo;
