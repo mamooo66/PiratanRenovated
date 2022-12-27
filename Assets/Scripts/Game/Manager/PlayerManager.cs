@@ -1,18 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using Mirror;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : NetworkBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private NavMeshAgent agent;
+
+    private void Start()
     {
-        
+        agent = GetComponent<NavMeshAgent>();
+        if (isLocalPlayer)
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void dragAreaInputUp()
     {
-        
+        Debug.Log("Basıldı Client");
+        ShipMove(Camera.main.ScreenPointToRay(Input.mousePosition));
+    }
+    
+    [Command]
+    public void ShipMove(Ray ray)
+    {
+        Debug.Log("Basıldı Server");
+        MoveCommands.MoveToPos(ray, agent);
     }
 }

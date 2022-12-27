@@ -1317,6 +1317,11 @@ MonoBehaviour:
   - {fileID: 4900000, guid: d289f8388c1548609d7419bd7eadc966, type: 3}
   - {fileID: 4900000, guid: 2be45beac98a4b418d096985dffdc431, type: 3}
   languageDropDown: {fileID: 2015401055}
+  selectedLanguageIndex: 0
+  Discord: {fileID: 0}
+  Support: {fileID: 0}
+  ReportBug: {fileID: 0}
+  Website: {fileID: 0}
   UserName: {fileID: 0}
   Password: {fileID: 0}
   Email: {fileID: 0}
@@ -1324,11 +1329,7 @@ MonoBehaviour:
   OrLogin: {fileID: 0}
   BecomeaPirateLegend: {fileID: 0}
   Terms: {fileID: 0}
-  Tooltip: {fileID: 0}
-  Discord: {fileID: 0}
-  Support: {fileID: 0}
-  Bug: {fileID: 0}
-  Website: {fileID: 0}
+  UsernameInfo: {fileID: 0}
   GetOnDeck: {fileID: 0}
   EmailLogin: {fileID: 0}
   PasswordLogin: {fileID: 0}
@@ -2247,10 +2248,10 @@ MonoBehaviour:
   offlineScene: Assets/Scenes/Home.unity
   onlineScene: Assets/Scenes/GameScene.unity
   transport: {fileID: 995395008}
-  networkAddress: 31.187.72.137
+  networkAddress: localHost
   maxConnections: 100
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 6175510429858309463, guid: cd51d359c9ed59e49b99bbc21eb5bdd9, type: 3}
+  playerPrefab: {fileID: 6780717334736836032, guid: 1fa6b07b2e09dd54ea72269210d56390, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
   spawnPrefabs:
@@ -2330,6 +2331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -2554,13 +2556,6 @@ MonoBehaviour:
   m_Script: {fileID: 1705125264, guid: 8382d7f8352b70544aa11f6729f875f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  databaseFile: {fileID: 4900000, guid: 1903ca56357f9ab45b480e10d95a9d5e, type: 3}
-  overrideBasePath: 
-  overridePathMode: 1
-  changeWorkingName: 1
-  workingName: PlayersData.sqlite
-  overwriteIfExists: 0
-  debugTrace: 1
 --- !u!4 &1125018327
 Transform:
   m_ObjectHideFlags: 0
@@ -9925,7 +9920,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!23 &4352607139831952907
