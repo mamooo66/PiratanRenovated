@@ -33,8 +33,8 @@ RectTransform:
   m_Children:
   - {fileID: 1275286213654407476}
   - {fileID: 8719075472778898772}
-  m_Father: {fileID: 7474181099156229449}
-  m_RootOrder: 14
+  m_Father: {fileID: 2607240312136716991}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -404,8 +404,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7296798023252779206}
-  m_Father: {fileID: 7474181099156229449}
-  m_RootOrder: 10
+  m_Father: {fileID: 2607240312136716991}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -538,8 +538,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4895620701950136939}
-  m_Father: {fileID: 7474181099156229449}
-  m_RootOrder: 12
+  m_Father: {fileID: 2607240312136716991}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1708,8 +1708,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2138039555528239171}
-  m_Father: {fileID: 7474181099156229449}
-  m_RootOrder: 11
+  m_Father: {fileID: 2607240312136716991}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1913,7 +1913,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 419540986586690698}
+  - {fileID: 8278238822051667644}
+  - {fileID: 5260259595365491534}
+  - {fileID: 7239341230220825690}
+  - {fileID: 7341218683074366423}
+  - {fileID: 6982391140893549446}
   m_Father: {fileID: 7474181099156229449}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3917,8 +3923,8 @@ RectTransform:
   m_Children:
   - {fileID: 5764211426720900687}
   - {fileID: 1283553199132596137}
-  m_Father: {fileID: 7474181099156229449}
-  m_RootOrder: 15
+  m_Father: {fileID: 2607240312136716991}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -4060,12 +4066,6 @@ RectTransform:
   - {fileID: 465030026894152020}
   - {fileID: 6687922241505107637}
   - {fileID: 1743435261805881511}
-  - {fileID: 419540986586690698}
-  - {fileID: 8278238822051667644}
-  - {fileID: 5260259595365491534}
-  - {fileID: 7239341230220825690}
-  - {fileID: 7341218683074366423}
-  - {fileID: 6982391140893549446}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4540,8 +4540,8 @@ RectTransform:
   m_Children:
   - {fileID: 3827792085059378100}
   - {fileID: 1289451633566769704}
-  m_Father: {fileID: 7474181099156229449}
-  m_RootOrder: 13
+  m_Father: {fileID: 2607240312136716991}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -5211,33 +5211,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 2
+  - eventID: 5
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: MoveController, Assembly-CSharp
-          m_MethodName: OnJoystickDown
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 3
+  - eventID: 12
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: MoveController, Assembly-CSharp
-          m_MethodName: OnJoystickUp
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 11
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
