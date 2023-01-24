@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SparklesNormalMap:
-        m_Texture: {fileID: 2800000, guid: b87c6510a4b3945a197eabf8b0d60278, type: 3}
+        m_Texture: {fileID: 2800000, guid: 581fcfd543a4445829bb923bace720da, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WaveNormalMap:
@@ -50,7 +50,7 @@ Material:
     - _ReflectionContribution: 0
     - _RefractionStrength: 0
     - _SparkleExponent: 60000
-    - _SparkleScale: 60
+    - _SparkleScale: 20
     - _SparkleSpeed: 0.005
     - _SunSpecularExponent: 0
     - _VertexNormalDelta: 0.01
