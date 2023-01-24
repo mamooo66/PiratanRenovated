@@ -7,6 +7,7 @@ TagManager:
   - NPC
   - Ship
   - DB Manager
+  - Chest
   layers:
   - Default
   - TransparentFX

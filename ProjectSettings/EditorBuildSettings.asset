@@ -13,11 +13,5 @@ EditorBuildSettings:
     guid: f89cb00c9d890054e8d1f2fb0c5b16d3
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
-    guid: a8669dfef1d4be84890c9ce39c0c37b1
-  - enabled: 0
-    path: Assets/Scenes/Main.unity
-    guid: 0fa8b7965660de64f8aefd6b64f18a08
-  - enabled: 0
-    path: Assets/ImportAssets/Mirror/Examples/MultipleAdditiveScenes/Scenes/Game.unity
-    guid: d45ed07e5475d4740812c97ae565255c
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}

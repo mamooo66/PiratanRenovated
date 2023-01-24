@@ -2466,6 +2466,13 @@ MonoBehaviour:
   m_Script: {fileID: 1705125264, guid: 8382d7f8352b70544aa11f6729f875f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  databaseFile: {fileID: 0}
+  overrideBasePath: 
+  overridePathMode: 0
+  changeWorkingName: 0
+  workingName: 
+  overwriteIfExists: 0
+  debugTrace: 0
 --- !u!4 &1125018327
 Transform:
   m_ObjectHideFlags: 0
@@ -8914,7 +8921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 55, y: -33.4}
+  m_AnchoredPosition: {x: 55, y: -33.399902}
   m_SizeDelta: {x: 87, y: 87.5899}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2034510635
@@ -9086,7 +9093,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 6780717334736836032, guid: 1fa6b07b2e09dd54ea72269210d56390, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
-  spawnPrefabs: []
+  spawnPrefabs:
+  - {fileID: 747640382386910864, guid: 52c09f245ea505e479fbde9f68a8efae, type: 3}
 --- !u!4 &2036039717
 Transform:
   m_ObjectHideFlags: 0
