@@ -13,7 +13,7 @@ public class UIManager : NetworkBehaviour
     public bool isReload;
     public Image reloadCircle;
     public Image attackButton;
-    
+
     public Sprite[] repairSprites;
     public float repairTime;
     public float repairCounter;
@@ -42,6 +42,8 @@ public class UIManager : NetworkBehaviour
     public Transform attackerGrid;
     public GameObject attackerSlotPrefab;
     
+    public GameObject focusButton;
+
     private void FixedUpdate()
     {
         if (isLocalPlayer)
@@ -227,5 +229,9 @@ public class UIManager : NetworkBehaviour
             _enemyName,
             _enemyHealthText,
             _healthRatio);
+    }
+    public void focusButtonShow()
+    {
+        focusButton.SetActive(true);
     }
 }

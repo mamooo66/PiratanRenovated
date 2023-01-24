@@ -209,6 +209,7 @@ public class PlayerManager : NetworkBehaviour
     public void cameraJoystickDown()
     {
         focusCamera = false;
+        uiManager.focusButtonShow();
         pressCameraJoystick = true;
     } 
     
@@ -220,11 +221,14 @@ public class PlayerManager : NetworkBehaviour
     public void cameraMoveWithDrag()
     {
         Camera.main.transform.position += new Vector3(difference.x, 0, difference.z);
+        uiManager.focusButtonShow();
+
     }
     
     public void focusShipButton()
     {
         focusCamera = true;
+        
     }
 
     [TargetRpc]
