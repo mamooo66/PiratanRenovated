@@ -1,228 +1,120 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using Firebase;
-using Firebase.Auth;
 using UnityEngine.SceneManagement;
+using LootLocker.Requests;
 
 public class AuthManager : MonoBehaviour
 {
-    
-    [Header("Firebase")]
-    public DependencyStatus dependencyStatus;
-    public FirebaseAuth auth;
-    public FirebaseUser user;
-    
-    private void Awake()
+    public void Login()
     {
-        // Check that all of the necessary dependencies for firebase are present on the system
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
+        string email = AuthUI.instance.emailLoginField.text;
+        string password = AuthUI.instance.passwordLoginField.text;
+        
+        LootLockerSDKManager.WhiteLabelLogin(email, password,false, (response) =>
         {
-            dependencyStatus = task.Result;
-
-            if (dependencyStatus == DependencyStatus.Available)
+            if (!response.success)
             {
-                InitializeFirebase();
+                Debug.Log("Login Failed");
             }
             else
             {
-                Debug.LogError("Could not resolve all firebase dependencies: " + dependencyStatus);
+                Debug.Log("Login Success");
+            }
+
+            if (response.VerifiedAt == null)
+            {
+                
+            }
+            
+            LootLockerSDKManager.StartWhiteLabelSession((response) =>
+            {
+                if (!response.success)
+                {
+                    Debug.Log("Session Failed");
+                }
+                else
+                {
+                    Debug.Log("Session Success");
+                    LoadScene();
+                }
+            });
+        });
+    }
+
+    void LoadScene()
+    {
+        LootLockerSDKManager.GetPlayerName((response) =>
+        {
+            if (response.success)
+            {
+                SceneManager.LoadScene("Home");
             }
         });
     }
 
-    void InitializeFirebase()
-    {
-        //Set the default instance object
-        auth = FirebaseAuth.DefaultInstance;
-
-        auth.StateChanged += AuthStateChanged;
-        AuthStateChanged(this, null);
-        Debug.Log("Firebase Initialized");
-    }
-
-    // Track state changes of the auth object.
-    void AuthStateChanged(object sender, System.EventArgs eventArgs)
-    {
-        if (auth.CurrentUser != user)
-        {
-            bool signedIn = user != auth.CurrentUser && auth.CurrentUser != null;
-
-            if (!signedIn && user != null)
-            {
-                Debug.Log("Signed out " + user.UserId);
-            }
-
-            user = auth.CurrentUser;
-
-            if (signedIn)
-            {
-                //İncelenecek
-                SceneManager.LoadScene("Home");
-            }
-            
-        }
-    }
-
-    public void Login()
-    {
-        StartCoroutine(LoginAsync(AuthUI.instance.emailLoginField.text, AuthUI.instance.passwordLoginField.text));
-    }
-
-    private IEnumerator LoginAsync(string email, string password)
-    {
-        auth = FirebaseAuth.DefaultInstance;
-        
-        var loginTask = auth.SignInWithEmailAndPasswordAsync(email, password);
-
-        yield return new WaitUntil(() => loginTask.IsCompleted);
-
-        if (loginTask.Exception != null)
-        {
-            Debug.LogError(loginTask.Exception);
-
-            FirebaseException firebaseException = loginTask.Exception.GetBaseException() as FirebaseException;
-            AuthError authError = (AuthError)firebaseException.ErrorCode;
-
-
-            string failedMessage = "Login Failed! Because ";
-
-            switch (authError)
-            {
-                case AuthError.InvalidEmail:
-                    failedMessage += "Email is invalid";
-                    break;
-                case AuthError.WrongPassword:
-                    failedMessage += "Wrong Password";
-                    break;
-                case AuthError.MissingEmail:
-                    failedMessage += "Email is missing";
-                    break;
-                case AuthError.MissingPassword:
-                    failedMessage += "Password is missing";
-                    break;
-                default:
-                    failedMessage = "Login Failed";
-                    break;
-            }
-
-            Debug.Log(failedMessage);
-        }
-        else
-        {
-            user = loginTask.Result;
-
-            Debug.LogFormat("{0} You Are Successfully Logged In", user.DisplayName);
-            SceneManager.LoadScene("Home");
-        }
-    }
-
+    // This code should be placed in a handler when user clicks the sign up button.
     public void Register()
     {
-        StartCoroutine(RegisterAsync(AuthUI.instance.usernameRegisterField.text, AuthUI.instance.emailRegisterField.text, AuthUI.instance.passwordRegisterField.text));
-    }
-
-    private IEnumerator RegisterAsync(string name, string email, string password)
-    {
-        if (name == "")
+        Debug.Log(1);
+        string email = AuthUI.instance.emailRegisterField.text;
+        string password = AuthUI.instance.passwordRegisterField.text;
+        string username = AuthUI.instance.usernameRegisterField.text;
+        
+        LootLockerSDKManager.WhiteLabelSignUp(email, password, (response) =>
         {
-            Debug.LogError("User Name is empty");
-        }
-        else if (email == "")
-        {
-            Debug.LogError("email field is empty");
-        }
-
-        else if(!AuthUI.instance.verifyToogle.isOn)
-        {
-            AuthUI.instance.warningRegisterText.text = "Check the checkbox!";
-        }
-        else
-        {
-            auth = FirebaseAuth.DefaultInstance;
-            var registerTask = auth.CreateUserWithEmailAndPasswordAsync(email, password);
-
-            yield return new WaitUntil(() => registerTask.IsCompleted);
-
-            if (registerTask.Exception != null)
+            Debug.Log(2);
+            if (!response.success)
             {
-                Debug.LogError(registerTask.Exception);
-
-                FirebaseException firebaseException = registerTask.Exception.GetBaseException() as FirebaseException;
-                AuthError authError = (AuthError)firebaseException.ErrorCode;
-
-                string failedMessage = "Registration Failed! Becuase ";
-                switch (authError)
-                {
-                    case AuthError.InvalidEmail:
-                        failedMessage += "Email is invalid";
-                        break;
-                    case AuthError.WrongPassword:
-                        failedMessage += "Wrong Password";
-                        break;
-                    case AuthError.MissingEmail:
-                        failedMessage += "Email is missing";
-                        break;
-                    case AuthError.MissingPassword:
-                        failedMessage += "Password is missing";
-                        break;
-                    default:
-                        failedMessage = "Registration Failed";
-                        break;
-                }
-
-                Debug.Log(failedMessage);
+                Debug.Log(response.Error);
+                return;
             }
             else
             {
-                // Get The User After Registration Success
-                user = registerTask.Result;
-
-                UserProfile userProfile = new UserProfile { DisplayName = name };
-
-                var updateProfileTask = user.UpdateUserProfileAsync(userProfile);
-
-                yield return new WaitUntil(() => updateProfileTask.IsCompleted);
-
-                if (updateProfileTask.Exception != null)
+                LootLockerSDKManager.WhiteLabelLogin(email,password, false, response =>
                 {
-                    // Delete the user if user update failed
-                    user.DeleteAsync();
-
-                    Debug.LogError(updateProfileTask.Exception);
-
-                    FirebaseException firebaseException = updateProfileTask.Exception.GetBaseException() as FirebaseException;
-                    AuthError authError = (AuthError)firebaseException.ErrorCode;
-
-
-                    string failedMessage = "Profile update Failed! Becuase ";
-                    switch (authError)
+                    if (!response.success)
                     {
-                        case AuthError.InvalidEmail:
-                            failedMessage += "Email is invalid";
-                            break;
-                        case AuthError.WrongPassword:
-                            failedMessage += "Wrong Password";
-                            break;
-                        case AuthError.MissingEmail:
-                            failedMessage += "Email is missing";
-                            break;
-                        case AuthError.MissingPassword:
-                            failedMessage += "Password is missing";
-                            break;
-                        default:
-                            failedMessage = "Profile update Failed";
-                            break;
+                        Debug.Log(response.Error);
+                        return;
                     }
+                    LootLockerSDKManager.StartWhiteLabelSession((response) =>
+                    {
+                        if (!response.success)
+                        {
+                            Debug.Log(response.Error);
+                            return;
+                        }
 
-                    Debug.Log(failedMessage);
-                }
-                else
-                {
-                    Debug.Log("Registration Sucessful Welcome " + user.DisplayName);
-                    AuthUI.instance.registerScreenButton();
-                }
+                        //username = response.public_uid;
+                        
+                        username = username;
+                        
+                        LootLockerSDKManager.SetPlayerName(username, (response) =>
+                        {
+                            if (!response.success)
+                            {
+                                Debug.Log(response.Error);
+                                return;
+                            }
+
+                            LootLockerSessionRequest sessionRequest = new LootLockerSessionRequest();
+                            LootLocker.LootLockerAPIManager.EndSession(sessionRequest, (response) =>
+                            {
+                                if (!response.success)
+                                {
+                                    Debug.Log(response.Error);
+                                    return;
+                                }
+
+                                Debug.Log("Account created successfully");
+                                
+                            });
+                        });
+                        
+                    });
+                });
             }
-        }
+        });
     }
 }
