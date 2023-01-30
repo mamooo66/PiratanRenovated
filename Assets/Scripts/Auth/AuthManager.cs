@@ -44,13 +44,7 @@ public class AuthManager : MonoBehaviour
 
     void LoadScene()
     {
-        LootLockerSDKManager.GetPlayerName((response) =>
-        {
-            if (response.success)
-            {
-                SceneManager.LoadScene("Home");
-            }
-        });
+        SceneManager.LoadScene("Home");
     }
 
     // This code should be placed in a handler when user clicks the sign up button.
@@ -108,7 +102,7 @@ public class AuthManager : MonoBehaviour
                                 }
 
                                 Debug.Log("Account created successfully");
-                                
+                                LoadScene();
                             });
                         });
                         

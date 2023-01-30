@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using LootLocker.Requests;
 using UnityEngine;
 using UnityEngine.AI;
 using Mirror;
@@ -367,6 +368,7 @@ public class PlayerManager : NetworkBehaviour
             uiManager.setRepairSprite(0);
         }
         playerData.health -= damage;
+        //LootLockerSDKManager.UpdateOrCreateKeyValue()
         if (playerData.health <= 0)
         {
             Destroy(gameObject);
