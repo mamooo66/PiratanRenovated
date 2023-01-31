@@ -6,6 +6,8 @@ using LootLocker.Requests;
 
 public class AuthManager : MonoBehaviour
 {
+    //public Text warningForgotText; //kaldırılabilir
+
     public void Login()
     {
         string email = AuthUI.instance.emailLoginField.text;
@@ -108,6 +110,27 @@ public class AuthManager : MonoBehaviour
                         
                     });
                 });
+            }
+        });
+    }
+    
+    public void ForgotPassword()
+    {
+        string email = AuthUI.instance.emailForgotField.text;
+        LootLockerSDKManager.WhiteLabelRequestPassword(email, (response) =>
+        {
+            if (!response.success)
+            {
+                Debug.Log(response.Error);
+//                warningForgotText.text = "Şifre sıfırlama e-postası gönderemedik";
+//ne yaparsam yapayım buraya text koyduğum zaman hata veriyor.
+        return;
+            }
+            else
+            {
+                Debug.Log("Password reset email sent");
+  //              warningForgotText.text = "Şifre sıfırlama e-postası gönderildi";
+
             }
         });
     }

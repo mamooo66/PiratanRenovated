@@ -11,7 +11,9 @@ public class AuthUI : AuthManager
     public GameObject loginUI;
     public GameObject registerUI;
     public GameObject linkPanel;
+    public GameObject forgotPanel;
     public GameObject screenText; //kaldırılabilir
+    
     [Space]
     [Header("Giriş ekranı değişkenleri")]
     public InputField emailLoginField;
@@ -26,8 +28,11 @@ public class AuthUI : AuthManager
     public GameObject userNameInfoPanel;
     public Text warningRegisterText;    //kaldırılabilir
     public Toggle verifyToogle;
+    [Space]
+    [Header("Şifremi unuttum ekranı değişkenleri")]
+    public InputField emailForgotField;
     
-    
+
 
     private void Awake()
     {
@@ -64,11 +69,21 @@ public class AuthUI : AuthManager
         loginUI.SetActive(false);
         registerUI.SetActive(true);
     }
+    
+    public void forgotScreenButton()
+    {
+        loginUI.SetActive(false);
+        forgotPanel.SetActive(true);
+    }
+    
+    public void backToLoginButton()
+    {
+        loginUI.SetActive(true);
+        forgotPanel.SetActive(false);
+    }
 
     public void onWriteScreenText(string screenSTR)
     {
-        // Burası Kaldırılabilir
-        
         screenText.transform.GetChild(0).GetComponent<Text>().text = screenSTR;
         screenText.GetComponent<Animation>().Stop();
         screenText.GetComponent<Animation>().Play();
