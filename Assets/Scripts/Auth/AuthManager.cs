@@ -6,7 +6,7 @@ using LootLocker.Requests;
 
 public class AuthManager : MonoBehaviour
 {
-    //public Text warningForgotText; //kaldırılabilir
+    public Text warningForgotText; //kaldırılabilir
 
     public void Login()
     {
@@ -122,15 +122,13 @@ public class AuthManager : MonoBehaviour
             if (!response.success)
             {
                 Debug.Log(response.Error);
-//                warningForgotText.text = "Şifre sıfırlama e-postası gönderemedik";
-//ne yaparsam yapayım buraya text koyduğum zaman hata veriyor.
-        return;
+                warningForgotText.text = "Şifre sıfırlama e-postası gönderemedik";
+                return;
             }
             else
             {
                 Debug.Log("Password reset email sent");
-  //              warningForgotText.text = "Şifre sıfırlama e-postası gönderildi";
-
+                warningForgotText.text = "Şifre sıfırlama e-postası gönderildi";
             }
         });
     }
